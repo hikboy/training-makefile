@@ -1,0 +1,9 @@
+
+$@  Filename of the target.
+$^  The names of all prerequisites with duplicate names removed.
+$+  The names of all prerequisites, including duplicates.
+$<  The name of the first prerequisite in the rule.
+$?  The names of all prerequisites newer than the target.
+$*  With a suffix rule, this is the base name (or stem) of the target. If the
+    rule is .c.o: , for example, and the matching target is foo.o , this value
+    is foo . With some pattern rules, this value may not be what you expect.
