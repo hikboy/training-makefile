@@ -11,9 +11,18 @@ clean:
 	rm -rf hello tt
 
 SOMEFILE = `date +%02d%02m%02y`.dat
+CURTIME0 = `date +%T`.dat
+CURTIME1 = $(shell date +%T).dat
 
 all: 
 	@echo $(SOMEFILE)
+
+all1: 
+	@echo $(CURTIME0)
+	@echo $(CURTIME1)
+	sleep 5
+	@echo $(CURTIME0)
+	@echo $(CURTIME1)
 
 
 allerr: $(SOMEFILE)
@@ -67,6 +76,15 @@ tflag1:
 # Pattern rule
 %.o: %.cxx
 	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $<
+
+SRCS=foo.c bar.c tt.cpp
+#OBJS=$(SRCS:.c=.o)
+#OBJS=$(patsubst %.c, %.o, $(SRCS))
+#OBJS=$(patsubst %.cpp, %.o, $(patsubst %.c, %.o, $(SRCS)))
+OBJS=$(addsuffix .o, $(basename $(SRCS)))
+
+PRTOBJS:
+	@echo $(OBJS)
 
 
 

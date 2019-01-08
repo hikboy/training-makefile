@@ -7,3 +7,13 @@ $?  The names of all prerequisites newer than the target.
 $*  With a suffix rule, this is the base name (or stem) of the target. If the
     rule is .c.o: , for example, and the matching target is foo.o , this value
     is foo . With some pattern rules, this value may not be what you expect.
+
+
+Variable    Default     Description
+CC          gcc         C compiler.
+CXX         g++         C++ compiler.
+CFLAGS      none        Flags passed to the C compiler with implicit rules.
+CXXFLAGS    none        Flags passed to the C++ compiler with implicit rules.
+CPPFLAGS    none        Flags passed to the C preprocessor used with implicit
+                        rules, including C++, C, some assembly language rules,
+                        and several others. Typical flags include -I , -D , and -U .
