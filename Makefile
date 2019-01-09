@@ -86,5 +86,18 @@ OBJS=$(addsuffix .o, $(basename $(SRCS)))
 PRTOBJS:
 	@echo $(OBJS)
 
+#A=0
 
+ifeq ($(A), 0)
+allA:
+	@echo $(A) == 0
+else
+allA:
+	@echo $(A) != 0
 
+endif
+
+#A=0
+
+#ifndef (A_VITAL_VARIABLE)
+#$(error oops!! A_VITAL_VARIABLE is not set )
